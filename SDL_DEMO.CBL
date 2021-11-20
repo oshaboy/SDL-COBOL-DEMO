@@ -28,6 +28,11 @@
        77 E_RETURN PIC 9(1).
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
+       
+	    CALL "SDL_Init" USING
+	    BY VALUE 62001
+	    END-CALL.
+	    
             CALL "SDL_CreateWindow" USING
             BY CONTENT WINDOW-TITLE
             BY VALUE WIDTH
