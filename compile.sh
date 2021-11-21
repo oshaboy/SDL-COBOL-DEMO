@@ -1,2 +1,1 @@
-cobc -x -O3 -c  SDL_DEMO.CBL 
-cc -O3 -o SDL_DEMO SDL_DEMO.o -lcob -lSDL2
+cobc -x -O3 -o SDL_DEMO SDL_DEMO.CBL /usr/lib/libSDL2-2.0.so
