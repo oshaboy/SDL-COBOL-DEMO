@@ -1,2 +1,2 @@
-cobc -x -O3 -c  SDL_DEMO.CBL
-cc -export-dynamic -o SDL_DEMO SDL_DEMO.o -lSDL2 -lcob -lm
+cobc -x -O3 -c -fstatic-call SDL_DEMO.CBL
+gcc -o SDL_DEMO SDL_DEMO.o $(cob-config --libs) -lSDL2
