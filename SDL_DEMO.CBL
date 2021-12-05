@@ -21,7 +21,7 @@
            77 COLOR_G PIC 9(3).
            77 COLOR_B PIC 9(3).
            01 E.
-            05 E_TYPE USAGE BINARY-C-LONG UNSIGNED.
+            05 E_TYPE USAGE BINARY-INT UNSIGNED.
             05 USAGE BINARY-CHAR OCCURS 60 TIMES.
            77 E_RETURN PIC 9(1).
            77 WINDOWTITLE PIC X(20) VALUE Z"SDL COBOL DEMO".
@@ -112,7 +112,6 @@
             END-CALL.
 
             PERFORM UNTIL E_RETURN EQUALS 0
-
              IF E_TYPE=256 THEN
               DISPLAY "EXIT"
               STOP RUN
