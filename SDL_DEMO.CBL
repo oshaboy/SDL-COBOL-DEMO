@@ -9,22 +9,22 @@
        DATA DIVISION.
        FILE SECTION.
        WORKING-STORAGE SECTION.
-           77 SDL-WINDOW USAGE POINTER.
-           77 SDL-RENDERER USAGE POINTER.
-           77 WIDTH PIC 9(3) VALUE 640.
-           77 HEIGHT PIC 9(3) VALUE 480.
-           77 X1 PIC 9(3).
-           77 X2 PIC 9(3).
-           77 Y1 PIC 9(3).
-           77 Y2 PIC 9(3).
-           77 COLOR_R PIC 9(3).
-           77 COLOR_G PIC 9(3).
-           77 COLOR_B PIC 9(3).
-           01 E.
-            05 E_TYPE USAGE BINARY-INT UNSIGNED.
-            05 USAGE BINARY-CHAR OCCURS 60 TIMES.
-           77 E_RETURN PIC 9(1).
-           77 WINDOWTITLE PIC X(20) VALUE Z"SDL COBOL DEMO".
+        77 SDL-WINDOW USAGE POINTER.
+        77 SDL-RENDERER USAGE POINTER.
+        77 WIDTH PIC 9(3) VALUE 640.
+        77 HEIGHT PIC 9(3) VALUE 480.
+        77 X1 PIC 9(3).
+        77 X2 PIC 9(3).
+        77 Y1 PIC 9(3).
+        77 Y2 PIC 9(3).
+        77 COLOR_R PIC 9(3).
+        77 COLOR_G PIC 9(3).
+        77 COLOR_B PIC 9(3).
+        01 E.
+         05 E_TYPE USAGE BINARY-INT UNSIGNED.
+         05 USAGE BINARY-CHAR OCCURS 60 TIMES.
+        77 E_RETURN PIC 9(1).
+        77 WINDOWTITLE PIC X(20) VALUE Z"SDL COBOL DEMO".
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
 
@@ -61,7 +61,7 @@
            CALL "SDL_RenderClear" USING BY VALUE SDL-RENDERER END-CALL.
            PERFORM DRAW-LINE 9999 TIMES.
            GOBACK.
-            DRAW-LINE.
+       DRAW-LINE.
              COMPUTE COLOR_R=FUNCTION RANDOM()*256.
              COMPUTE COLOR_G=FUNCTION RANDOM()*256.
              COMPUTE COLOR_B=FUNCTION RANDOM()*256.
@@ -105,7 +105,7 @@
              END-CALL.
              CALL "SDL_Delay" USING BY VALUE 1 END-CALL.
             PERFORM CHECK_QUIT.
-           CHECK_QUIT.
+       CHECK_QUIT.
             CALL "SDL_PollEvent"
              USING BY REFERENCE E
              RETURNING E_RETURN
